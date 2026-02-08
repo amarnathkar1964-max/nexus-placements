@@ -1,8 +1,6 @@
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="py-16 border-t border-border bg-card/30">
+  return <footer className="py-16 border-t border-border bg-card/30">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
@@ -11,7 +9,7 @@ const Footer = () => {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">P</span>
               </div>
-              <span className="font-display font-bold text-xl">PlaceAI</span>
+              <span className="font-display font-bold text-xl">EvolveAI</span>
             </div>
             <p className="text-muted-foreground text-sm mb-6 max-w-xs">
               The AI-powered placement platform that transforms how students find careers 
@@ -77,8 +75,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
