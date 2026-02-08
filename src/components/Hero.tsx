@@ -1,124 +1,171 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, GraduationCap, Users, Building2 } from "lucide-react";
+import { ArrowRight, GraduationCap, Users, Building2, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-hero-glow" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse-slow" style={{
-      animationDelay: '2s'
-    }} />
-      
-      {/* Grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+const Hero = () => {
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16">
+      {/* Animated background */}
+      <div className="absolute inset-0 bg-hero-glow" />
+      <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse-slow" />
+      <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-accent/20 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/5 to-transparent rounded-full" />
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-primary/40 rounded-full animate-float"
+            style={{
+              left: `${15 + i * 15}%`,
+              top: `${20 + (i % 3) * 25}%`,
+              animationDelay: `${i * 0.8}s`,
+              animationDuration: `${4 + i}s`
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:48px_48px]" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-in">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs mb-6 animate-fade-in hover:scale-105 transition-transform cursor-default">
+            <Sparkles className="w-3 h-3 text-primary" />
+            <span className="text-muted-foreground">AI-Powered Placement Platform</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           </div>
 
           {/* Main headline */}
-          <h1 className="text-5xl md:text-7xl font-bold font-display mb-6 leading-tight animate-fade-in-up" style={{
-          animationDelay: '0.1s'
-        }}>
+          <h1 
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-4 leading-[1.1] tracking-tight animate-fade-in-up"
+            style={{ animationDelay: '0.1s' }}
+          >
             An End-to-End AI Suite for{' '}
-            <span className="gradient-text">Smarter Placements</span>
+            <span className="gradient-text relative">
+              Smarter Placements
+              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
+                <path d="M2 10C50 2 150 2 298 10" stroke="url(#underline-gradient)" strokeWidth="3" strokeLinecap="round"/>
+                <defs>
+                  <linearGradient id="underline-gradient" x1="0" y1="0" x2="300" y2="0">
+                    <stop stopColor="hsl(173 80% 50%)" />
+                    <stop offset="1" stopColor="hsl(260 80% 65%)" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{
-          animationDelay: '0.2s'
-        }}>
+          <p 
+            className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-up"
+            style={{ animationDelay: '0.2s' }}
+          >
             Prepare better, predict outcomes, and place students efficiently using AI.
             One unified platform for students, coordinators, and recruiters.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{
-          animationDelay: '0.3s'
-        }}>
-            <Button variant="hero" size="xl" asChild>
+          <div 
+            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6 animate-fade-in-up"
+            style={{ animationDelay: '0.3s' }}
+          >
+            <Button variant="hero" size="lg" asChild className="group">
               <Link to="/student/dashboard">
                 Get Started
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </div>
 
           {/* Login Options */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{
-          animationDelay: '0.4s'
-        }}>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/student/dashboard">
-                <GraduationCap className="w-5 h-5 mr-2" />
-                Student Login
+          <div 
+            className="flex flex-wrap gap-2 justify-center items-center animate-fade-in-up"
+            style={{ animationDelay: '0.4s' }}
+          >
+            <Button variant="ghost" size="sm" asChild className="text-xs hover:bg-primary/10 hover:text-primary transition-all">
+              <Link to="/student/dashboard" className="flex items-center gap-1.5">
+                <GraduationCap className="w-3.5 h-3.5" />
+                Student
               </Link>
             </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/coordinator/dashboard">
-                <Users className="w-5 h-5 mr-2" />
-                Placement Team Login
+            <span className="text-border">•</span>
+            <Button variant="ghost" size="sm" asChild className="text-xs hover:bg-accent/10 hover:text-accent transition-all">
+              <Link to="/coordinator/dashboard" className="flex items-center gap-1.5">
+                <Users className="w-3.5 h-3.5" />
+                Coordinator
               </Link>
             </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/recruiter/dashboard">
-                <Building2 className="w-5 h-5 mr-2" />
-                Recruiter Login
+            <span className="text-border">•</span>
+            <Button variant="ghost" size="sm" asChild className="text-xs hover:bg-[hsl(200_80%_50%)]/10 hover:text-[hsl(200_80%_50%)] transition-all">
+              <Link to="/recruiter/dashboard" className="flex items-center gap-1.5">
+                <Building2 className="w-3.5 h-3.5" />
+                Recruiter
               </Link>
             </Button>
           </div>
 
           {/* Dashboard Preview */}
-          <div className="mt-20 animate-fade-in-up" style={{
-          animationDelay: '0.5s'
-        }}>
-            <div className="relative mx-auto max-w-4xl">
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 pointer-events-none" />
-              <div className="rounded-2xl border border-border/50 overflow-hidden shadow-2xl shadow-primary/10 bg-card/50 backdrop-blur-sm">
-                <div className="h-8 bg-secondary/50 border-b border-border/50 flex items-center gap-2 px-4">
-                  <div className="w-3 h-3 rounded-full bg-destructive/60" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/60" />
-                </div>
-                <div className="p-6 grid grid-cols-3 gap-4">
-                  <div className="col-span-2 space-y-4">
-                    <div className="h-32 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                      <span className="text-lg font-display font-semibold text-primary">AI Analytics Dashboard</span>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="h-24 rounded-lg bg-secondary/50 flex items-center justify-center">
-                        <span className="text-sm text-muted-foreground">Placement Score</span>
-                      </div>
-                      <div className="h-24 rounded-lg bg-secondary/50 flex items-center justify-center">
-                        <span className="text-sm text-muted-foreground">Skill Progress</span>
-                      </div>
+          <div 
+            className="mt-12 animate-fade-in-up"
+            style={{ animationDelay: '0.5s' }}
+          >
+            <div className="relative mx-auto max-w-3xl group">
+              {/* Glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+              
+              <div className="relative rounded-xl border border-border/50 overflow-hidden shadow-2xl shadow-primary/10 bg-card/80 backdrop-blur-sm">
+                {/* Browser bar */}
+                <div className="h-7 bg-secondary/80 border-b border-border/50 flex items-center gap-1.5 px-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-destructive/70" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+                  <div className="flex-1 flex justify-center">
+                    <div className="px-4 py-0.5 bg-background/50 rounded text-[10px] text-muted-foreground">
+                      evolveai.app/dashboard
                     </div>
                   </div>
-                  <div className="space-y-4">
-                    <div className="h-20 rounded-lg bg-secondary/50 flex items-center justify-center">
-                      <span className="text-sm text-muted-foreground">Resume Score</span>
+                </div>
+                
+                {/* Dashboard content */}
+                <div className="p-4 grid grid-cols-12 gap-3">
+                  {/* Sidebar */}
+                  <div className="col-span-2 space-y-2">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className={`h-6 rounded ${i === 0 ? 'bg-primary/30' : 'bg-secondary/50'}`} />
+                    ))}
+                  </div>
+                  
+                  {/* Main content */}
+                  <div className="col-span-10 space-y-3">
+                    <div className="h-24 rounded-lg bg-gradient-to-br from-primary/20 via-accent/10 to-transparent flex items-center justify-center border border-primary/20">
+                      <span className="text-sm font-display font-medium text-primary">AI Analytics Dashboard</span>
                     </div>
-                    <div className="h-20 rounded-lg bg-secondary/50 flex items-center justify-center">
-                      <span className="text-sm text-muted-foreground">Interview Ready</span>
-                    </div>
-                    <div className="h-20 rounded-lg bg-secondary/50 flex items-center justify-center">
-                      <span className="text-sm text-muted-foreground">AI Insights</span>
+                    <div className="grid grid-cols-3 gap-3">
+                      {['85%', '12', '94'].map((value, i) => (
+                        <div key={i} className="h-16 rounded-lg bg-secondary/50 flex flex-col items-center justify-center border border-border/30 hover:border-primary/30 transition-colors">
+                          <span className="text-lg font-bold text-foreground">{value}</span>
+                          <span className="text-[10px] text-muted-foreground">
+                            {['Readiness', 'Interviews', 'Score'][i]}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
+              
+              {/* Gradient fade */}
+              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent" />
             </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

@@ -1,103 +1,82 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Building2, Briefcase, ArrowRight, CheckCircle } from "lucide-react";
+import { GraduationCap, Building2, Briefcase, ArrowRight, Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const roles = [
   {
     icon: GraduationCap,
-    title: "For Students",
-    description: "Your intelligent career companion from preparation to placement.",
-    color: "primary",
-    features: [
-      "AI-powered skill gap analysis",
-      "Personalized interview preparation",
-      "Company compatibility scores",
-      "Real-time application tracking",
-      "Mock interview with AI coach",
-    ],
-    cta: "Start Your Journey",
+    title: "Students",
+    description: "Your AI career companion",
+    gradient: "from-primary to-primary/50",
+    link: "/student/dashboard",
+    features: ["Skill gap analysis", "Interview prep", "Company matching", "Progress tracking"],
   },
   {
     icon: Building2,
-    title: "For Coordinators",
-    description: "Streamline the entire placement process with intelligent automation.",
-    color: "accent",
-    features: [
-      "Unified student management",
-      "Automated scheduling system",
-      "Analytics & reporting dashboard",
-      "Communication hub",
-      "Bulk operations & exports",
-    ],
-    cta: "Simplify Coordination",
+    title: "Coordinators",
+    description: "Streamline placements",
+    gradient: "from-accent to-accent/50",
+    link: "/coordinator/dashboard",
+    features: ["Student management", "Auto scheduling", "Analytics dashboard", "Bulk operations"],
   },
   {
     icon: Briefcase,
-    title: "For Recruiters",
-    description: "Find the perfect candidates faster with AI-powered matching.",
-    color: "[hsl(200_80%_50%)]",
-    features: [
-      "Smart candidate shortlisting",
-      "Skills & culture fit analysis",
-      "Integrated interview scheduling",
-      "Candidate insights & reports",
-      "Streamlined offer management",
-    ],
-    cta: "Find Top Talent",
+    title: "Recruiters",
+    description: "Find top talent faster",
+    gradient: "from-[hsl(200_80%_50%)] to-[hsl(200_80%_50%)/0.5]",
+    link: "/recruiter/dashboard",
+    features: ["Smart shortlisting", "Culture fit analysis", "Interview scheduling", "Candidate insights"],
   },
 ];
 
 const RoleCards = () => {
   return (
-    <section id="roles" className="py-24 relative">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
+    <section id="roles" className="py-16 relative">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-3">
             Built for <span className="gradient-text">Everyone</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Whether you're a student seeking opportunities, a coordinator managing placements, 
-            or a recruiter finding talent — we've got you covered.
+          <p className="text-sm md:text-base text-muted-foreground">
+            Whether you're seeking opportunities, managing placements, or finding talent.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {roles.map((role, index) => (
-            <Card 
+            <div 
               key={role.title}
-              variant="gradient"
-              className="relative overflow-hidden animate-fade-in-up group"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              className="group relative p-5 rounded-xl bg-card/60 border border-border/50 hover:border-primary/30 hover:bg-card/80 transition-all duration-300 animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Gradient overlay on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br from-${role.color}/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              {/* Gradient glow on hover */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${role.gradient} opacity-0 group-hover:opacity-5 rounded-xl transition-opacity duration-500`} />
               
-              <CardHeader className="relative z-10">
-                <div className={`w-14 h-14 rounded-2xl bg-${role.color}/20 flex items-center justify-center mb-4`}>
-                  <role.icon className={`w-7 h-7 text-${role.color}`} />
+              <div className="relative z-10">
+                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${role.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                  <role.icon className="w-5 h-5 text-primary-foreground" />
                 </div>
-                <CardTitle className="text-2xl">{role.title}</CardTitle>
-                <CardDescription className="text-base">
-                  {role.description}
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent className="relative z-10 space-y-6">
-                <ul className="space-y-3">
+                
+                <h3 className="font-display font-semibold text-lg mb-1">{role.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{role.description}</p>
+                
+                <ul className="space-y-2 mb-5">
                   {role.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3 text-sm">
-                      <CheckCircle className={`w-5 h-5 text-${role.color} shrink-0`} />
-                      <span className="text-muted-foreground">{feature}</span>
+                    <li key={feature} className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <Check className="w-3.5 h-3.5 text-primary shrink-0" />
+                      {feature}
                     </li>
                   ))}
                 </ul>
 
-                <Button variant="outline" className="w-full group/btn">
-                  {role.cta}
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                <Button variant="outline" size="sm" asChild className="w-full group/btn text-xs">
+                  <Link to={role.link}>
+                    Get Started
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
                 </Button>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,78 +1,92 @@
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const links = {
+  Product: [
+    { label: "Features", href: "#features" },
+    { label: "For Students", href: "/student/dashboard" },
+    { label: "For Coordinators", href: "/coordinator/dashboard" },
+    { label: "For Recruiters", href: "/recruiter/dashboard" },
+  ],
+  Resources: [
+    { label: "Documentation", href: "#" },
+    { label: "Blog", href: "#" },
+    { label: "Help Center", href: "#" },
+  ],
+  Company: [
+    { label: "About", href: "#" },
+    { label: "Careers", href: "#" },
+    { label: "Privacy", href: "#" },
+    { label: "Terms", href: "#" },
+  ],
+};
+
+const socials = [
+  { icon: Twitter, href: "#" },
+  { icon: Linkedin, href: "#" },
+  { icon: Github, href: "#" },
+  { icon: Mail, href: "#" },
+];
+
 const Footer = () => {
-  return <footer className="py-16 border-t border-border bg-card/30">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+  return (
+    <footer className="py-12 border-t border-border bg-card/30">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">P</span>
+            <Link to="/" className="flex items-center gap-2 mb-3">
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-xs">P</span>
               </div>
-              <span className="font-display font-bold text-xl">EvolveAI</span>
-            </div>
-            <p className="text-muted-foreground text-sm mb-6 max-w-xs">
-              The AI-powered placement platform that transforms how students find careers 
-              and companies find talent.
+              <span className="font-display font-bold text-lg">EvolveAI</span>
+            </Link>
+            <p className="text-xs text-muted-foreground mb-4 max-w-xs">
+              AI-powered placement platform transforming how students find careers.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="p-2 rounded-lg hover:bg-secondary transition-colors">
-                <Twitter className="w-5 h-5 text-muted-foreground hover:text-foreground" />
-              </a>
-              <a href="#" className="p-2 rounded-lg hover:bg-secondary transition-colors">
-                <Linkedin className="w-5 h-5 text-muted-foreground hover:text-foreground" />
-              </a>
-              <a href="#" className="p-2 rounded-lg hover:bg-secondary transition-colors">
-                <Github className="w-5 h-5 text-muted-foreground hover:text-foreground" />
-              </a>
-              <a href="#" className="p-2 rounded-lg hover:bg-secondary transition-colors">
-                <Mail className="w-5 h-5 text-muted-foreground hover:text-foreground" />
-              </a>
+            <div className="flex gap-2">
+              {socials.map((social, i) => (
+                <a 
+                  key={i} 
+                  href={social.href} 
+                  className="p-2 rounded-lg hover:bg-secondary transition-colors"
+                >
+                  <social.icon className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Links */}
-          <div>
-            <h4 className="font-display font-semibold mb-4">Product</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">For Students</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">For Coordinators</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">For Recruiters</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Pricing</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-display font-semibold mb-4">Resources</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">API Reference</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Status</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-display font-semibold mb-4">Company</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Terms of Service</a></li>
-            </ul>
-          </div>
+          {Object.entries(links).map(([title, items]) => (
+            <div key={title}>
+              <h4 className="font-display font-semibold text-sm mb-3">{title}</h4>
+              <ul className="space-y-2">
+                {items.map((item) => (
+                  <li key={item.label}>
+                    {item.href.startsWith('/') ? (
+                      <Link to={item.href} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <a href={item.href} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                        {item.label}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">© 2026 EvolveAI. All rights reserved.</p>
-          <p className="text-sm text-muted-foreground">
-            Made with ❤️ for the next generation of talent
-          </p>
+        <div className="pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-muted-foreground">© 2026 EvolveAI. All rights reserved.</p>
+          <p className="text-xs text-muted-foreground">Made with ❤️ for the next generation</p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
