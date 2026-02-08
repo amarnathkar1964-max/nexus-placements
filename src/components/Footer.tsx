@@ -67,9 +67,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            © 2026 PlaceAI. All rights reserved.
-          </p>
+          <p className="text-sm text-muted-foreground">© 2026 EvolveAI. All rights reserved.</p>
           <p className="text-sm text-muted-foreground">
             Made with ❤️ for the next generation of talent
           </p>
