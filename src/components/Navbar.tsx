@@ -3,12 +3,9 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-strong">
+  return <nav className="fixed top-0 left-0 right-0 z-50 glass-strong">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
@@ -40,9 +37,7 @@ const Navbar = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <a href="#how-it-works" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              How It Works
-            </a>
+            
           </div>
 
           {/* Desktop CTA */}
@@ -62,8 +57,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-3 border-t border-border animate-fade-in">
+        {isOpen && <div className="md:hidden py-3 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-3">
               <a href="#ai-features" className="text-xs text-muted-foreground hover:text-foreground transition-colors py-1">
                 Features
@@ -89,11 +83,8 @@ const Navbar = () => {
                 </Button>
               </div>
             </div>
-          </div>
-        )}
+          </div>}
       </div>
-    </nav>
-  );
+    </nav>;
 };
-
 export default Navbar;
