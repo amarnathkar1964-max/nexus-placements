@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, GraduationCap, Users, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background effects */}
       <div className="absolute inset-0 bg-hero-glow" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse-slow" style={{
+      animationDelay: '2s'
+    }} />
       
       {/* Grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
@@ -18,25 +18,29 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-in">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-muted-foreground">
-              Trusted by 500+ Institutions Worldwide
-            </span>
+            
           </div>
 
           {/* Main headline */}
-          <h1 className="text-5xl md:text-7xl font-bold font-display mb-6 leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <h1 className="text-5xl md:text-7xl font-bold font-display mb-6 leading-tight animate-fade-in-up" style={{
+          animationDelay: '0.1s'
+        }}>
             An End-to-End AI Suite for{' '}
             <span className="gradient-text">Smarter Placements</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{
+          animationDelay: '0.2s'
+        }}>
             Prepare better, predict outcomes, and place students efficiently using AI.
             One unified platform for students, coordinators, and recruiters.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{
+          animationDelay: '0.3s'
+        }}>
             <Button variant="hero" size="xl" asChild>
               <Link to="/student/dashboard">
                 Get Started
@@ -46,7 +50,9 @@ const Hero = () => {
           </div>
 
           {/* Login Options */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{
+          animationDelay: '0.4s'
+        }}>
             <Button variant="glass" size="lg" asChild>
               <Link to="/student/dashboard">
                 <GraduationCap className="w-5 h-5 mr-2" />
@@ -68,7 +74,9 @@ const Hero = () => {
           </div>
 
           {/* Dashboard Preview */}
-          <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+          <div className="mt-20 animate-fade-in-up" style={{
+          animationDelay: '0.5s'
+        }}>
             <div className="relative mx-auto max-w-4xl">
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 pointer-events-none" />
               <div className="rounded-2xl border border-border/50 overflow-hidden shadow-2xl shadow-primary/10 bg-card/50 backdrop-blur-sm">
@@ -111,8 +119,6 @@ const Hero = () => {
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
