@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const CTA = () => {
-  return (
-    <section className="py-16 relative overflow-hidden">
+  return <section className="py-16 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
@@ -25,25 +23,13 @@ const CTA = () => {
             Join the most intelligent placement platform and take the first step toward your dream career.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <Button variant="hero" size="lg" asChild className="group">
-              <Link to="/student/dashboard">
-                Get Started Free
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button variant="hero-outline" size="lg">
-              Schedule Demo
-            </Button>
-          </div>
+          
 
           <p className="mt-4 text-xs text-muted-foreground">
             No credit card required • Free forever for students
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTA;
