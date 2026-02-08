@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { 
   FileText, 
   MessageSquare, 
@@ -11,85 +11,89 @@ import {
 const features = [
   {
     icon: FileText,
-    title: "AI Resume Analyzer",
-    description: "Upload your resume and get instant AI feedback on quality, ATS compatibility, and skill gaps aligned with your target companies.",
-    tag: "Resume & Profile",
+    title: "Resume Analyzer",
+    description: "AI feedback on quality, ATS compatibility, and skill gaps.",
+    tag: "Profile",
   },
   {
     icon: MessageSquare,
-    title: "AI Mock Interview",
-    description: "Practice with our AI interviewer through text or voice. Get real-time evaluation on confidence, technical accuracy, and communication.",
-    tag: "Interview Prep",
+    title: "Mock Interview",
+    description: "Practice with AI through text or voice with real-time evaluation.",
+    tag: "Interview",
   },
   {
     icon: TrendingUp,
-    title: "Placement Prediction",
-    description: "AI predicts your placement probability based on skills, performance, and market trends. See your readiness score and improvement areas.",
+    title: "Predictions",
+    description: "AI predicts placement probability and highlights weak areas.",
     tag: "Analytics",
   },
   {
     icon: BookOpen,
-    title: "Smart Preparation",
-    description: "Aptitude, technical, and HR preparation with AI-generated questions, explanations, and company-specific practice modules.",
+    title: "Smart Prep",
+    description: "AI-generated questions with company-specific practice modules.",
     tag: "Practice",
   },
   {
     icon: Brain,
-    title: "AI Recommendations",
-    description: "Personalized learning paths that adapt to your performance, skills, and career goals. Focus on what matters most.",
-    tag: "Personalization",
+    title: "AI Advisor",
+    description: "Personalized learning paths that adapt to your goals.",
+    tag: "Personal",
   },
   {
     icon: BarChart3,
-    title: "Batch Analytics",
-    description: "For coordinators: AI-powered insights on batch performance, company matching, and placement forecasting reports.",
-    tag: "Admin Tools",
+    title: "Batch Insights",
+    description: "For coordinators: batch performance and forecasting.",
+    tag: "Admin",
   },
 ];
 
 const AIFeatures = () => {
   return (
-    <section id="ai-features" className="py-24 relative overflow-hidden">
+    <section id="ai-features" className="py-16 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
+      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-[100px]" />
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
-            <Brain className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-muted-foreground">AI-Powered Modules</span>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs mb-4">
+            <Brain className="w-3 h-3 text-primary" />
+            <span className="text-muted-foreground">AI-Powered</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-3">
             Intelligent Features for <span className="gradient-text">Every Step</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            From resume building to interview preparation, our AI modules guide you through every phase of your placement journey.
+          <p className="text-sm md:text-base text-muted-foreground">
+            From resume building to interview prep, AI guides your entire placement journey.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {features.map((feature, index) => (
             <Card 
               key={feature.title} 
               variant="feature"
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="p-4 animate-fade-in-up hover:translate-y-[-4px] transition-all duration-300"
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <CardHeader>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-6 h-6 text-primary-foreground" />
+              <CardContent className="p-0">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-5 h-5 text-primary-foreground" />
                   </div>
-                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-secondary text-muted-foreground">
-                    {feature.tag}
-                  </span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-display font-semibold text-sm">{feature.title}</h3>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-secondary text-muted-foreground">
+                        {feature.tag}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  {feature.description}
-                </CardDescription>
               </CardContent>
             </Card>
           ))}
