@@ -25,9 +25,7 @@ const CTA = () => {
 
           
 
-          <p className="mt-4 text-xs text-muted-foreground">
-            No credit card required • Free forever for students
-          </p>
+          
         </div>
       </div>
     </section>;
