@@ -54,7 +54,7 @@ const RoleCards = () => {
               
               <div className="relative z-10">
                 <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${role.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <role.icon className="w-5 h-5 bg-accent text-sidebar" />
+                  <role.icon className="w-5 h-5 text-sidebar bg-primary" />
                 </div>
                 
                 <h3 className="font-display font-semibold text-lg mb-1">{role.title}</h3>
