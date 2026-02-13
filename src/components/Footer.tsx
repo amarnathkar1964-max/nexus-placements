@@ -30,9 +30,9 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-border bg-card/30">
+    <footer className="py-8 border-t border-border bg-card/30">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-3">

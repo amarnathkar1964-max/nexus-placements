@@ -31,9 +31,9 @@ const roles = [
 
 const RoleCards = () => {
   return (
-    <section id="roles" className="py-16 relative">
+    <section id="roles" className="py-8 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-6">
           <h2 className="text-3xl md:text-4xl font-bold font-display mb-3">
             Built for <span className="gradient-text">Everyone</span>
           </h2>
