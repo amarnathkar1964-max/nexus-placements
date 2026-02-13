@@ -53,7 +53,7 @@ const RoleCards = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${role.gradient} opacity-0 group-hover:opacity-5 rounded-xl transition-opacity duration-500`} />
               
               <div className="relative z-10">
-                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${role.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                <div className="">
                   <role.icon className="w-5 h-5 text-sidebar bg-primary" />
                 </div>
                 
