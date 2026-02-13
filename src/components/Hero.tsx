@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden pt-14">
       {/* Animated background */}
       <div className="absolute inset-0 bg-hero-glow" />
       <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse-slow" />
@@ -61,7 +61,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p 
-            className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-up"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground mb-5 max-w-2xl mx-auto leading-relaxed animate-fade-in-up"
             style={{ animationDelay: '0.2s' }}
           >
             Prepare better, predict outcomes, and place students efficiently using AI.
@@ -70,7 +70,7 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div 
-            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6 animate-fade-in-up"
+            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-4 animate-fade-in-up"
             style={{ animationDelay: '0.3s' }}
           >
             <Button variant="hero" size="lg" asChild className="group">
@@ -110,7 +110,7 @@ const Hero = () => {
 
           {/* Dashboard Preview */}
           <div 
-            className="mt-12 animate-fade-in-up"
+            className="mt-8 animate-fade-in-up"
             style={{ animationDelay: '0.5s' }}
           >
             <div className="relative mx-auto max-w-3xl group">
