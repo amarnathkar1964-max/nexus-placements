@@ -19,25 +19,25 @@ const ProblemSolution = () => {
   return (
     <section className="py-16 relative">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-          {cards.map((card, index) => {
-            const Icon = card.icon;
-            return (
-              <div key={card.title} className="flex items-center gap-4 md:gap-6">
-                
+        
 
 
 
 
 
 
-                {index < cards.length - 1 &&
-                <ArrowRight className="w-5 h-5 text-muted-foreground hidden md:block" />
-                }
-              </div>);
 
-          })}
-        </div>
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </section>);
 
