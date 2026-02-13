@@ -16,18 +16,18 @@ const Stats = () => {
       
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-          {stats.map((stat, index) => <div key={stat.label} className="text-center group animate-fade-in" style={{
-          animationDelay: `${index * 0.1}s`
-        }}>
-              <div className="text-3xl md:text-4xl font-bold font-display gradient-text group-hover:scale-110 transition-transform">
-                {stat.value}
-              </div>
-              <div className="text-xs md:text-sm text-muted-foreground mt-1">
-                {stat.label}
-              </div>
-            </div>)}
-        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </section>;
 };
