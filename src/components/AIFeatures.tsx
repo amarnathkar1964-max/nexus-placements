@@ -16,12 +16,6 @@ const features = [
     tag: "Profile",
   },
   {
-    icon: MessageSquare,
-    title: "Mock Interview",
-    description: "Practice with AI through text or voice with real-time evaluation.",
-    tag: "Interview",
-  },
-  {
     icon: TrendingUp,
     title: "Predictions",
     description: "AI predicts placement probability and highlights weak areas.",
@@ -32,12 +26,6 @@ const features = [
     title: "Smart Prep",
     description: "AI-generated questions with company-specific practice modules.",
     tag: "Practice",
-  },
-  {
-    icon: Brain,
-    title: "AI Advisor",
-    description: "Personalized learning paths that adapt to your goals.",
-    tag: "Personal",
   },
   {
     icon: BarChart3,
