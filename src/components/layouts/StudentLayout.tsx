@@ -26,8 +26,13 @@ import {
   LogOut,
   GraduationCap,
   Target,
-  Brain
+  Brain,
+  Megaphone,
+  Clock,
+  Calendar,
+  Star
 } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 const menuItems = [
   { title: "Dashboard", url: "/student/dashboard", icon: Home },
@@ -168,10 +173,44 @@ const StudentLayout = ({ children }: StudentLayoutProps) => {
           <header className="h-14 border-b border-border flex items-center px-4 gap-4 bg-card/50 backdrop-blur-sm sticky top-0 z-40">
             <SidebarTrigger />
             <div className="flex-1" />
-            <Button variant="ghost" size="icon" className="relative">
-              <Bell className="w-5 h-5" />
-              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary" />
-            </Button>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="ghost" size="icon" className="relative">
+                  <Bell className="w-5 h-5" />
+                  <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent align="end" className="w-80 p-0">
+                <div className="p-4 border-b border-border">
+                  <div className="flex items-center justify-between">
+                    <h4 className="font-semibold text-sm">Notifications</h4>
+                    <Button variant="link" size="sm" className="text-xs h-auto p-0" asChild>
+                      <Link to="/student/notifications">View All</Link>
+                    </Button>
+                  </div>
+                </div>
+                <div className="max-h-72 overflow-y-auto">
+                  {[
+                    { icon: Megaphone, color: "text-primary", bg: "bg-primary/20", title: "TCS Recruitment Drive", desc: "Registration open — apply before Feb 3rd", time: "2h ago", unread: true },
+                    { icon: Clock, color: "text-destructive", bg: "bg-destructive/20", title: "Resume Submission Deadline", desc: "Submit for Infosys by tomorrow 5 PM", time: "5h ago", unread: true },
+                    { icon: Calendar, color: "text-accent", bg: "bg-accent/20", title: "Interview Scheduled - Wipro", desc: "Feb 12th at 10:00 AM, Virtual", time: "1d ago", unread: false },
+                    { icon: Star, color: "text-green-400", bg: "bg-green-500/20", title: "Shortlisted - TCS", desc: "Congratulations! Check email for details", time: "2d ago", unread: false },
+                  ].map((n, i) => (
+                    <div key={i} className={`flex items-start gap-3 p-3 hover:bg-secondary/50 transition-colors border-b border-border last:border-0 ${n.unread ? 'bg-primary/5' : ''}`}>
+                      <div className={`w-8 h-8 rounded-lg ${n.bg} flex items-center justify-center shrink-0 mt-0.5`}>
+                        <n.icon className={`w-4 h-4 ${n.color}`} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className={`text-sm truncate ${n.unread ? 'font-semibold' : 'text-muted-foreground'}`}>{n.title}</p>
+                        <p className="text-xs text-muted-foreground truncate">{n.desc}</p>
+                        <p className="text-xs text-muted-foreground/60 mt-1">{n.time}</p>
+                      </div>
+                      {n.unread && <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-2" />}
+                    </div>
+                  ))}
+                </div>
+              </PopoverContent>
+            </Popover>
           </header>
           <div className="flex-1 p-6 overflow-auto">
             {children}
