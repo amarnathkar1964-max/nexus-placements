@@ -11,32 +11,32 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-  useSidebar,
-} from "@/components/ui/sidebar";
+  useSidebar } from
+"@/components/ui/sidebar";
 import { NavLink } from "@/components/NavLink";
 import { Button } from "@/components/ui/button";
-import { 
-  LayoutDashboard, 
-  Users, 
-  Building2, 
-  BarChart3, 
+import {
+  LayoutDashboard,
+  Users,
+  Building2,
+  BarChart3,
   Calendar,
   Bell,
   Settings,
   LogOut,
   Briefcase,
   FileText,
-  MessageSquare
-} from "lucide-react";
+  MessageSquare } from
+"lucide-react";
 
 const menuItems = [
-  { title: "Dashboard", url: "/coordinator/dashboard", icon: LayoutDashboard },
-  { title: "Students", url: "/coordinator/students", icon: Users },
-  { title: "Companies", url: "/coordinator/companies", icon: Building2 },
-  { title: "Analytics", url: "/coordinator/analytics", icon: BarChart3 },
-  { title: "Schedule", url: "/coordinator/schedule", icon: Calendar },
-  { title: "Communications", url: "/coordinator/communications", icon: MessageSquare },
-];
+{ title: "Dashboard", url: "/coordinator/dashboard", icon: LayoutDashboard },
+{ title: "Students", url: "/coordinator/students", icon: Users },
+{ title: "Companies", url: "/coordinator/companies", icon: Building2 },
+{ title: "Analytics", url: "/coordinator/analytics", icon: BarChart3 },
+{ title: "Schedule", url: "/coordinator/schedule", icon: Calendar },
+{ title: "Communications", url: "/coordinator/communications", icon: MessageSquare }];
+
 
 interface CoordinatorLayoutProps {
   children: ReactNode;
@@ -53,7 +53,7 @@ const SidebarContents = () => {
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0">
             <span className="text-primary-foreground font-bold text-sm">P</span>
           </div>
-          {!collapsed && <span className="font-display font-bold text-lg">PlaceAI</span>}
+          {!collapsed && <span className="font-display font-bold text-lg">EvolveAI</span>}
         </Link>
       </div>
 
@@ -64,18 +64,18 @@ const SidebarContents = () => {
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center shrink-0">
               <Briefcase className="w-5 h-5 text-primary-foreground" />
             </div>
-            {!collapsed && (
-              <div>
+            {!collapsed &&
+            <div>
                 <p className="font-medium text-sm">Dr. Sarah Chen</p>
                 <p className="text-xs text-sidebar-foreground/60">Placement Coordinator</p>
               </div>
-            )}
+            }
           </div>
         </div>
 
         {/* Quick Stats */}
-        {!collapsed && (
-          <div className="mb-6 grid grid-cols-2 gap-2">
+        {!collapsed &&
+        <div className="mb-6 grid grid-cols-2 gap-2">
             <div className="p-3 rounded-lg bg-primary/10 border border-primary/30">
               <p className="text-2xl font-bold font-display text-primary">248</p>
               <p className="text-xs text-sidebar-foreground/60">Active Students</p>
@@ -85,7 +85,7 @@ const SidebarContents = () => {
               <p className="text-xs text-sidebar-foreground/60">Companies</p>
             </div>
           </div>
-        )}
+        }
 
         <SidebarGroup>
           <SidebarGroupLabel className="text-xs font-semibold text-sidebar-foreground/50 uppercase tracking-wider">
@@ -93,20 +93,20 @@ const SidebarContents = () => {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
+              {menuItems.map((item) =>
+              <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <NavLink 
-                      to={item.url} 
-                      className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-sidebar-accent transition-colors"
-                      activeClassName="bg-sidebar-accent text-sidebar-primary font-medium"
-                    >
+                    <NavLink
+                    to={item.url}
+                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-sidebar-accent transition-colors"
+                    activeClassName="bg-sidebar-accent text-sidebar-primary font-medium">
+
                       <item.icon className="w-5 h-5 shrink-0" />
                       {!collapsed && <span>{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
-              ))}
+              )}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
@@ -133,8 +133,8 @@ const SidebarContents = () => {
           </SidebarMenuItem>
         </SidebarMenu>
       </div>
-    </>
-  );
+    </>);
+
 };
 
 const CoordinatorLayout = ({ children }: CoordinatorLayoutProps) => {
@@ -158,8 +158,8 @@ const CoordinatorLayout = ({ children }: CoordinatorLayoutProps) => {
           </div>
         </main>
       </div>
-    </SidebarProvider>
-  );
+    </SidebarProvider>);
+
 };
 
 export default CoordinatorLayout;
