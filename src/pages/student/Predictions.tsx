@@ -105,7 +105,7 @@ const Predictions = () => {
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="p-4 bg-green-500/10 border-green-500/30 my-0 rounded-lg mx-0 border-8 border-none shadow-xl py-[16px] px-[5px]">
+                    <div className="p-4 bg-green-500/10 border-green-500/30 my-0 rounded-lg mx-0 border-none shadow-xl py-[16px] px-[5px] border">
                       <p className="text-sm text-green-400 font-medium">Strengths</p>
                       <p className="text-lg font-semibold">Good Resume</p>
                     </div>
