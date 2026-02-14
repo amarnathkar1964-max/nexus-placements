@@ -2,47 +2,47 @@ import StudentLayout from "@/components/layouts/StudentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { 
-  TrendingUp, 
-  Target, 
-  Calendar, 
-  BookOpen, 
-  FileText, 
+import {
+  TrendingUp,
+  Target,
+  Calendar,
+  BookOpen,
+  FileText,
   MessageSquare,
   ArrowRight,
   CheckCircle,
   Clock,
   Sparkles,
   Brain,
-  BarChart3
-} from "lucide-react";
+  BarChart3 } from
+"lucide-react";
 import { Link } from "react-router-dom";
 
 const quickActions = [
-  { icon: BookOpen, title: "Practice Aptitude", href: "/student/preparation", color: "primary" },
-  { icon: FileText, title: "Analyze Resume", href: "/student/resume", color: "accent" },
-  { icon: MessageSquare, title: "Mock Interview", href: "/student/interview", color: "[hsl(200_80%_50%)]" },
-  { icon: TrendingUp, title: "View Predictions", href: "/student/predictions", color: "[hsl(150_80%_45%)]" },
-];
+{ icon: BookOpen, title: "Practice Aptitude", href: "/student/preparation", color: "primary" },
+{ icon: FileText, title: "Analyze Resume", href: "/student/resume", color: "accent" },
+{ icon: MessageSquare, title: "Mock Interview", href: "/student/interview", color: "[hsl(200_80%_50%)]" },
+{ icon: TrendingUp, title: "View Predictions", href: "/student/predictions", color: "[hsl(150_80%_45%)]" }];
+
 
 const upcomingTasks = [
-  { title: "Complete Aptitude Test", deadline: "Today", priority: "high", progress: 60 },
-  { title: "Submit Updated Resume", deadline: "Tomorrow", priority: "medium", progress: 80 },
-  { title: "Technical Mock Interview", deadline: "In 3 days", priority: "low", progress: 0 },
-];
+{ title: "Complete Aptitude Test", deadline: "Today", priority: "high", progress: 60 },
+{ title: "Submit Updated Resume", deadline: "Tomorrow", priority: "medium", progress: 80 },
+{ title: "Technical Mock Interview", deadline: "In 3 days", priority: "low", progress: 0 }];
+
 
 const recentActivity = [
-  { title: "Completed Logical Reasoning Module", time: "2 hours ago", type: "practice" },
-  { title: "Resume analyzed - Score: 85%", time: "Yesterday", type: "resume" },
-  { title: "Mock Interview - Communication: A", time: "2 days ago", type: "interview" },
-];
+{ title: "Completed Logical Reasoning Module", time: "2 hours ago", type: "practice" },
+{ title: "Resume analyzed - Score: 85%", time: "Yesterday", type: "resume" },
+{ title: "Mock Interview - Communication: A", time: "2 days ago", type: "interview" }];
+
 
 const skillProgress = [
-  { name: "Aptitude", progress: 75, color: "primary" },
-  { name: "Technical", progress: 60, color: "accent" },
-  { name: "Communication", progress: 85, color: "[hsl(200_80%_50%)]" },
-  { name: "Domain Knowledge", progress: 45, color: "[hsl(150_80%_45%)]" },
-];
+{ name: "Aptitude", progress: 75, color: "primary" },
+{ name: "Technical", progress: 60, color: "accent" },
+{ name: "Communication", progress: 85, color: "[hsl(200_80%_50%)]" },
+{ name: "Domain Knowledge", progress: 45, color: "[hsl(150_80%_45%)]" }];
+
 
 const StudentDashboard = () => {
   return (
@@ -51,7 +51,7 @@ const StudentDashboard = () => {
         {/* Welcome Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold font-display">Welcome back, John! 👋</h1>
+            <h1 className="text-3xl font-bold font-display">Welcome back, Amarnath! 👋</h1>
             <p className="text-muted-foreground mt-1">
               Here's your personalized placement dashboard
             </p>
@@ -139,18 +139,18 @@ const StudentDashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {quickActions.map((action) => (
-                    <Link
-                      key={action.title}
-                      to={action.href}
-                      className="flex flex-col items-center gap-3 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group"
-                    >
+                  {quickActions.map((action) =>
+                  <Link
+                    key={action.title}
+                    to={action.href}
+                    className="flex flex-col items-center gap-3 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group">
+
                       <div className={`w-12 h-12 rounded-xl bg-${action.color}/20 flex items-center justify-center group-hover:scale-110 transition-transform`}>
                         <action.icon className={`w-6 h-6 text-${action.color}`} />
                       </div>
                       <span className="text-sm font-medium text-center">{action.title}</span>
                     </Link>
-                  ))}
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -167,23 +167,23 @@ const StudentDashboard = () => {
                 </Button>
               </CardHeader>
               <CardContent className="space-y-4">
-                {upcomingTasks.map((task, index) => (
-                  <div
-                    key={task.title}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-secondary/30 hover:bg-secondary/50 transition-colors"
-                  >
+                {upcomingTasks.map((task, index) =>
+                <div
+                  key={task.title}
+                  className="flex items-center gap-4 p-4 rounded-xl bg-secondary/30 hover:bg-secondary/50 transition-colors">
+
                     <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                      task.priority === 'high' ? 'bg-destructive/20' : 
-                      task.priority === 'medium' ? 'bg-yellow-500/20' : 'bg-green-500/20'
-                    }`}>
-                      {task.progress === 100 ? (
-                        <CheckCircle className="w-5 h-5 text-green-500" />
-                      ) : (
-                        <Clock className={`w-5 h-5 ${
-                          task.priority === 'high' ? 'text-destructive' : 
-                          task.priority === 'medium' ? 'text-yellow-500' : 'text-green-500'
-                        }`} />
-                      )}
+                  task.priority === 'high' ? 'bg-destructive/20' :
+                  task.priority === 'medium' ? 'bg-yellow-500/20' : 'bg-green-500/20'}`
+                  }>
+                      {task.progress === 100 ?
+                    <CheckCircle className="w-5 h-5 text-green-500" /> :
+
+                    <Clock className={`w-5 h-5 ${
+                    task.priority === 'high' ? 'text-destructive' :
+                    task.priority === 'medium' ? 'text-yellow-500' : 'text-green-500'}`
+                    } />
+                    }
                     </div>
                     <div className="flex-1">
                       <p className="font-medium">{task.title}</p>
@@ -194,7 +194,7 @@ const StudentDashboard = () => {
                       <p className="text-xs text-muted-foreground text-right mt-1">{task.progress}%</p>
                     </div>
                   </div>
-                ))}
+                )}
               </CardContent>
             </Card>
 
@@ -208,15 +208,15 @@ const StudentDashboard = () => {
                 <CardDescription>Track your improvement across key areas</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                {skillProgress.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
+                {skillProgress.map((skill) =>
+                <div key={skill.name} className="space-y-2">
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-medium">{skill.name}</span>
                       <span className="text-sm text-muted-foreground">{skill.progress}%</span>
                     </div>
                     <Progress value={skill.progress} className="h-2" />
                   </div>
-                ))}
+                )}
               </CardContent>
             </Card>
           </div>
@@ -263,12 +263,12 @@ const StudentDashboard = () => {
                 <CardDescription>Your latest actions</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                {recentActivity.map((activity, index) => (
-                  <div key={index} className="flex items-start gap-3">
+                {recentActivity.map((activity, index) =>
+                <div key={index} className="flex items-start gap-3">
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
-                      activity.type === 'practice' ? 'bg-primary/20' :
-                      activity.type === 'resume' ? 'bg-accent/20' : 'bg-[hsl(200_80%_50%)]/20'
-                    }`}>
+                  activity.type === 'practice' ? 'bg-primary/20' :
+                  activity.type === 'resume' ? 'bg-accent/20' : 'bg-[hsl(200_80%_50%)]/20'}`
+                  }>
                       {activity.type === 'practice' && <BookOpen className="w-4 h-4 text-primary" />}
                       {activity.type === 'resume' && <FileText className="w-4 h-4 text-accent" />}
                       {activity.type === 'interview' && <MessageSquare className="w-4 h-4 text-[hsl(200_80%_50%)]" />}
@@ -278,7 +278,7 @@ const StudentDashboard = () => {
                       <p className="text-xs text-muted-foreground">{activity.time}</p>
                     </div>
                   </div>
-                ))}
+                )}
               </CardContent>
             </Card>
 
@@ -317,8 +317,8 @@ const StudentDashboard = () => {
           </div>
         </div>
       </div>
-    </StudentLayout>
-  );
+    </StudentLayout>);
+
 };
 
 export default StudentDashboard;

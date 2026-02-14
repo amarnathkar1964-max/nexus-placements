@@ -11,16 +11,16 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-  useSidebar,
-} from "@/components/ui/sidebar";
+  useSidebar } from
+"@/components/ui/sidebar";
 import { NavLink } from "@/components/NavLink";
 import { Button } from "@/components/ui/button";
-import { 
-  Home, 
-  BookOpen, 
-  FileText, 
-  MessageSquare, 
-  TrendingUp, 
+import {
+  Home,
+  BookOpen,
+  FileText,
+  MessageSquare,
+  TrendingUp,
   Bell,
   Settings,
   LogOut,
@@ -30,18 +30,18 @@ import {
   Megaphone,
   Clock,
   Calendar,
-  Star
-} from "lucide-react";
+  Star } from
+"lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 const menuItems = [
-  { title: "Dashboard", url: "/student/dashboard", icon: Home },
-  { title: "Preparation", url: "/student/preparation", icon: BookOpen },
-  { title: "Resume Analyzer", url: "/student/resume", icon: FileText },
-  { title: "Mock Interview", url: "/student/interview", icon: MessageSquare },
-  { title: "Predictions", url: "/student/predictions", icon: TrendingUp },
-  { title: "Notifications", url: "/student/notifications", icon: Bell },
-];
+{ title: "Dashboard", url: "/student/dashboard", icon: Home },
+{ title: "Preparation", url: "/student/preparation", icon: BookOpen },
+{ title: "Resume Analyzer", url: "/student/resume", icon: FileText },
+{ title: "Mock Interview", url: "/student/interview", icon: MessageSquare },
+{ title: "Predictions", url: "/student/predictions", icon: TrendingUp },
+{ title: "Notifications", url: "/student/notifications", icon: Bell }];
+
 
 interface StudentLayoutProps {
   children: ReactNode;
@@ -59,7 +59,7 @@ const SidebarContents = () => {
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0">
             <span className="text-primary-foreground font-bold text-sm">P</span>
           </div>
-          {!collapsed && <span className="font-display font-bold text-lg">PlaceAI</span>}
+          {!collapsed && <span className="font-display font-bold text-lg">EvolveAI</span>}
         </Link>
       </div>
 
@@ -70,18 +70,18 @@ const SidebarContents = () => {
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0">
               <GraduationCap className="w-5 h-5 text-primary-foreground" />
             </div>
-            {!collapsed && (
-              <div>
-                <p className="font-medium text-sm">John Doe</p>
+            {!collapsed &&
+            <div>
+                <p className="font-medium text-sm">Amarnath Kar</p>
                 <p className="text-xs text-sidebar-foreground/60">B.Tech CSE • 2026</p>
               </div>
-            )}
+            }
           </div>
         </div>
 
         {/* Readiness Score */}
-        {!collapsed && (
-          <div className="mb-6 p-4 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30">
+        {!collapsed &&
+        <div className="mb-6 p-4 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-medium text-sidebar-foreground/80">Placement Readiness</span>
               <Brain className="w-4 h-4 text-primary" />
@@ -94,7 +94,7 @@ const SidebarContents = () => {
               <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-primary to-accent" />
             </div>
           </div>
-        )}
+        }
 
         <SidebarGroup>
           <SidebarGroupLabel className="text-xs font-semibold text-sidebar-foreground/50 uppercase tracking-wider">
@@ -102,27 +102,27 @@ const SidebarContents = () => {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
+              {menuItems.map((item) =>
+              <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <NavLink 
-                      to={item.url} 
-                      className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-sidebar-accent transition-colors"
-                      activeClassName="bg-sidebar-accent text-sidebar-primary font-medium"
-                    >
+                    <NavLink
+                    to={item.url}
+                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-sidebar-accent transition-colors"
+                    activeClassName="bg-sidebar-accent text-sidebar-primary font-medium">
+
                       <item.icon className="w-5 h-5 shrink-0" />
                       {!collapsed && <span>{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
-              ))}
+              )}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
 
         {/* AI Assistant */}
-        {!collapsed && (
-          <div className="mt-6 p-4 rounded-xl glass border border-primary/20">
+        {!collapsed &&
+        <div className="mt-6 p-4 rounded-xl glass border border-primary/20">
             <div className="flex items-center gap-2 mb-2">
               <Target className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium">AI Suggestion</span>
@@ -134,7 +134,7 @@ const SidebarContents = () => {
               <Link to="/student/preparation">Start Practice</Link>
             </Button>
           </div>
-        )}
+        }
       </SidebarContent>
 
       {/* Bottom section */}
@@ -158,8 +158,8 @@ const SidebarContents = () => {
           </SidebarMenuItem>
         </SidebarMenu>
       </div>
-    </>
-  );
+    </>);
+
 };
 
 const StudentLayout = ({ children }: StudentLayoutProps) => {
@@ -191,12 +191,12 @@ const StudentLayout = ({ children }: StudentLayoutProps) => {
                 </div>
                 <div className="max-h-72 overflow-y-auto">
                   {[
-                    { icon: Megaphone, color: "text-primary", bg: "bg-primary/20", title: "TCS Recruitment Drive", desc: "Registration open — apply before Feb 3rd", time: "2h ago", unread: true },
-                    { icon: Clock, color: "text-destructive", bg: "bg-destructive/20", title: "Resume Submission Deadline", desc: "Submit for Infosys by tomorrow 5 PM", time: "5h ago", unread: true },
-                    { icon: Calendar, color: "text-accent", bg: "bg-accent/20", title: "Interview Scheduled - Wipro", desc: "Feb 12th at 10:00 AM, Virtual", time: "1d ago", unread: false },
-                    { icon: Star, color: "text-green-400", bg: "bg-green-500/20", title: "Shortlisted - TCS", desc: "Congratulations! Check email for details", time: "2d ago", unread: false },
-                  ].map((n, i) => (
-                    <div key={i} className={`flex items-start gap-3 p-3 hover:bg-secondary/50 transition-colors border-b border-border last:border-0 ${n.unread ? 'bg-primary/5' : ''}`}>
+                  { icon: Megaphone, color: "text-primary", bg: "bg-primary/20", title: "TCS Recruitment Drive", desc: "Registration open — apply before Feb 3rd", time: "2h ago", unread: true },
+                  { icon: Clock, color: "text-destructive", bg: "bg-destructive/20", title: "Resume Submission Deadline", desc: "Submit for Infosys by tomorrow 5 PM", time: "5h ago", unread: true },
+                  { icon: Calendar, color: "text-accent", bg: "bg-accent/20", title: "Interview Scheduled - Wipro", desc: "Feb 12th at 10:00 AM, Virtual", time: "1d ago", unread: false },
+                  { icon: Star, color: "text-green-400", bg: "bg-green-500/20", title: "Shortlisted - TCS", desc: "Congratulations! Check email for details", time: "2d ago", unread: false }].
+                  map((n, i) =>
+                  <div key={i} className={`flex items-start gap-3 p-3 hover:bg-secondary/50 transition-colors border-b border-border last:border-0 ${n.unread ? 'bg-primary/5' : ''}`}>
                       <div className={`w-8 h-8 rounded-lg ${n.bg} flex items-center justify-center shrink-0 mt-0.5`}>
                         <n.icon className={`w-4 h-4 ${n.color}`} />
                       </div>
@@ -207,7 +207,7 @@ const StudentLayout = ({ children }: StudentLayoutProps) => {
                       </div>
                       {n.unread && <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-2" />}
                     </div>
-                  ))}
+                  )}
                 </div>
               </PopoverContent>
             </Popover>
@@ -217,8 +217,8 @@ const StudentLayout = ({ children }: StudentLayoutProps) => {
           </div>
         </main>
       </div>
-    </SidebarProvider>
-  );
+    </SidebarProvider>);
+
 };
 
 export default StudentLayout;
