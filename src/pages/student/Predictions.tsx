@@ -128,7 +128,7 @@ const Predictions = () => {
 
 
                     <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                      <span>7 days ago</span>
+                      
                       <span>Today</span>
                     </div>
                   </div>
