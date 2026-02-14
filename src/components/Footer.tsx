@@ -25,7 +25,7 @@ const socials = [
 { icon: Twitter, href: "#" },
 { icon: Linkedin, href: "#" },
 { icon: Github, href: "#" },
-{ icon: Mail, href: "#" }];
+{ icon: Mail, href: "mailto:pratikkumar060207@gmail.com" }];
 
 
 const Footer = () => {
@@ -45,15 +45,11 @@ const Footer = () => {
               AI-powered placement platform transforming how students find careers.
             </p>
             <div className="flex gap-2">
-              {socials.map((social, i) => {}
-
-
-
-
-
-
-
-              )}
+              {socials.map((social, i) => (
+                <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors">
+                  <social.icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
 
