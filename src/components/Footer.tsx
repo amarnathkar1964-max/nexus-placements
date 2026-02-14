@@ -41,15 +41,15 @@ const Footer = () => {
               </div>
               <span className="font-display font-bold text-lg">EvolveAI</span>
             </Link>
-            <p className="text-xs text-muted-foreground mb-4 max-w-xs">
-              AI-powered placement platform transforming how students find careers.
+            <p className="text-xs text-muted-foreground mb-4 max-w-xs">AI-powered placement platform transforming how students find careers.
+Contact me below on email for any queries or feedback :)
             </p>
             <div className="flex gap-2">
-              {socials.map((social, i) => (
-                <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors">
+              {socials.map((social, i) =>
+              <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors">
                   <social.icon className="w-4 h-4" />
                 </a>
-              ))}
+              )}
             </div>
           </div>
 
