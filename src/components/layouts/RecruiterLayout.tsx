@@ -11,30 +11,30 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-  useSidebar,
-} from "@/components/ui/sidebar";
+  useSidebar } from
+"@/components/ui/sidebar";
 import { NavLink } from "@/components/NavLink";
 import { Button } from "@/components/ui/button";
-import { 
-  LayoutDashboard, 
-  Users, 
-  Search, 
+import {
+  LayoutDashboard,
+  Users,
+  Search,
   Calendar,
   Bell,
   Settings,
   LogOut,
   Building2,
   FileText,
-  BarChart3
-} from "lucide-react";
+  BarChart3 } from
+"lucide-react";
 
 const menuItems = [
-  { title: "Dashboard", url: "/recruiter/dashboard", icon: LayoutDashboard },
-  { title: "Candidates", url: "/recruiter/candidates", icon: Users },
-  { title: "Search Talent", url: "/recruiter/search", icon: Search },
-  { title: "Interviews", url: "/recruiter/interviews", icon: Calendar },
-  { title: "Analytics", url: "/recruiter/analytics", icon: BarChart3 },
-];
+{ title: "Dashboard", url: "/recruiter/dashboard", icon: LayoutDashboard },
+{ title: "Candidates", url: "/recruiter/candidates", icon: Users },
+{ title: "Search Talent", url: "/recruiter/search", icon: Search },
+{ title: "Interviews", url: "/recruiter/interviews", icon: Calendar },
+{ title: "Analytics", url: "/recruiter/analytics", icon: BarChart3 }];
+
 
 interface RecruiterLayoutProps {
   children: ReactNode;
@@ -51,7 +51,7 @@ const SidebarContents = () => {
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0">
             <span className="text-primary-foreground font-bold text-sm">P</span>
           </div>
-          {!collapsed && <span className="font-display font-bold text-lg">PlaceAI</span>}
+          {!collapsed && <span className="font-display font-bold text-lg">EvolveAI</span>}
         </Link>
       </div>
 
@@ -62,18 +62,18 @@ const SidebarContents = () => {
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0">
               <Building2 className="w-5 h-5 text-primary-foreground" />
             </div>
-            {!collapsed && (
-              <div>
+            {!collapsed &&
+            <div>
                 <p className="font-medium text-sm">TCS Recruitment</p>
                 <p className="text-xs text-sidebar-foreground/60">HR Manager</p>
               </div>
-            )}
+            }
           </div>
         </div>
 
         {/* Quick Stats */}
-        {!collapsed && (
-          <div className="mb-6 grid grid-cols-2 gap-2">
+        {!collapsed &&
+        <div className="mb-6 grid grid-cols-2 gap-2">
             <div className="p-3 rounded-lg bg-primary/10 border border-primary/30">
               <p className="text-2xl font-bold font-display text-primary">145</p>
               <p className="text-xs text-sidebar-foreground/60">Applicants</p>
@@ -83,7 +83,7 @@ const SidebarContents = () => {
               <p className="text-xs text-sidebar-foreground/60">Shortlisted</p>
             </div>
           </div>
-        )}
+        }
 
         <SidebarGroup>
           <SidebarGroupLabel className="text-xs font-semibold text-sidebar-foreground/50 uppercase tracking-wider">
@@ -91,20 +91,20 @@ const SidebarContents = () => {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
+              {menuItems.map((item) =>
+              <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <NavLink 
-                      to={item.url} 
-                      className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-sidebar-accent transition-colors"
-                      activeClassName="bg-sidebar-accent text-sidebar-primary font-medium"
-                    >
+                    <NavLink
+                    to={item.url}
+                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-sidebar-accent transition-colors"
+                    activeClassName="bg-sidebar-accent text-sidebar-primary font-medium">
+
                       <item.icon className="w-5 h-5 shrink-0" />
                       {!collapsed && <span>{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
-              ))}
+              )}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
@@ -131,8 +131,8 @@ const SidebarContents = () => {
           </SidebarMenuItem>
         </SidebarMenu>
       </div>
-    </>
-  );
+    </>);
+
 };
 
 const RecruiterLayout = ({ children }: RecruiterLayoutProps) => {
@@ -156,8 +156,8 @@ const RecruiterLayout = ({ children }: RecruiterLayoutProps) => {
           </div>
         </main>
       </div>
-    </SidebarProvider>
-  );
+    </SidebarProvider>);
+
 };
 
 export default RecruiterLayout;
