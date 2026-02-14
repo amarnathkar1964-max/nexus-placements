@@ -105,9 +105,9 @@ const Predictions = () => {
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="p-4 bg-green-500/10 border-green-500/30 my-0 mx-0 border-none shadow-xl py-[16px] border px-[16px] rounded-xl">
+                    <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/30">
                       <p className="text-sm text-green-400 font-medium">Strengths</p>
-                      <p className="text-lg font-semibold">Good Resume</p>
+                      <p className="text-lg font-semibold">Communication, Resume</p>
                     </div>
                     <div className="p-4 rounded-xl bg-destructive/10 border border-destructive/30">
                       <p className="text-sm text-destructive font-medium">Focus Areas</p>
@@ -117,19 +117,19 @@ const Predictions = () => {
 
                   {/* Weekly Trend */}
                   <div>
-                    
-                    
+                    <p className="text-sm text-muted-foreground mb-2">7-Day Progress</p>
+                    <div className="flex items-end gap-2 h-16">
+                      {predictionData.weeklyProgress.map((value, index) =>
+                      <div
+                        key={index}
+                        className="flex-1 bg-primary/40 rounded-t-sm transition-all hover:bg-primary"
+                        style={{ height: `${value}%` }} />
 
-
-
-
-
-
-
-
+                      )}
+                    </div>
                     <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                      <span>7 days ago</span>
                       
-                      <span>Today</span>
                     </div>
                   </div>
                 </div>
