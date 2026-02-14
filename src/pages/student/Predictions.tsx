@@ -2,8 +2,8 @@ import StudentLayout from "@/components/layouts/StudentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { 
-  TrendingUp, 
+import {
+  TrendingUp,
   TrendingDown,
   Target,
   Sparkles,
@@ -13,8 +13,8 @@ import {
   Building2,
   Calendar,
   AlertCircle,
-  CheckCircle
-} from "lucide-react";
+  CheckCircle } from
+"lucide-react";
 
 const predictionData = {
   placementProbability: 78,
@@ -22,26 +22,26 @@ const predictionData = {
   trendDirection: "up",
   confidence: "High",
   factors: [
-    { name: "Technical Skills", score: 75, weight: 30, impact: "positive" },
-    { name: "Communication", score: 85, weight: 25, impact: "positive" },
-    { name: "Aptitude", score: 70, weight: 20, impact: "neutral" },
-    { name: "Resume Quality", score: 85, weight: 15, impact: "positive" },
-    { name: "Interview Prep", score: 60, weight: 10, impact: "negative" },
-  ],
+  { name: "Technical Skills", score: 75, weight: 30, impact: "positive" },
+  { name: "Communication", score: 85, weight: 25, impact: "positive" },
+  { name: "Aptitude", score: 70, weight: 20, impact: "neutral" },
+  { name: "Resume Quality", score: 85, weight: 15, impact: "positive" },
+  { name: "Interview Prep", score: 60, weight: 10, impact: "negative" }],
+
   weeklyProgress: [65, 68, 70, 72, 75, 76, 78],
   recommendations: [
-    { action: "Complete 3 more mock interviews", impact: "+8%", priority: "high" },
-    { action: "Finish Data Structures module", impact: "+5%", priority: "high" },
-    { action: "Update resume with recent project", impact: "+3%", priority: "medium" },
-    { action: "Practice aptitude daily", impact: "+4%", priority: "medium" },
-  ],
+  { action: "Complete 3 more mock interviews", impact: "+8%", priority: "high" },
+  { action: "Finish Data Structures module", impact: "+5%", priority: "high" },
+  { action: "Update resume with recent project", impact: "+3%", priority: "medium" },
+  { action: "Practice aptitude daily", impact: "+4%", priority: "medium" }],
+
   companyPredictions: [
-    { name: "TCS", probability: 92, status: "Highly Likely" },
-    { name: "Infosys", probability: 88, status: "Highly Likely" },
-    { name: "Wipro", probability: 82, status: "Likely" },
-    { name: "Cognizant", probability: 75, status: "Likely" },
-    { name: "Amazon", probability: 45, status: "Moderate" },
-  ],
+  { name: "TCS", probability: 92, status: "Highly Likely" },
+  { name: "Infosys", probability: 88, status: "Highly Likely" },
+  { name: "Wipro", probability: 82, status: "Likely" },
+  { name: "Cognizant", probability: 75, status: "Likely" },
+  { name: "Amazon", probability: 45, status: "Moderate" }]
+
 };
 
 const Predictions = () => {
@@ -86,10 +86,10 @@ const Predictions = () => {
                     </div>
                   </div>
                   <div className={`absolute -top-2 -right-2 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 ${
-                    predictionData.trendDirection === 'up' 
-                      ? 'bg-green-500/20 text-green-400' 
-                      : 'bg-destructive/20 text-destructive'
-                  }`}>
+                  predictionData.trendDirection === 'up' ?
+                  'bg-green-500/20 text-green-400' :
+                  'bg-destructive/20 text-destructive'}`
+                  }>
                     {predictionData.trendDirection === 'up' ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
                     {predictionData.trend}
                   </div>
@@ -105,7 +105,7 @@ const Predictions = () => {
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/30">
+                    <div className="p-4 bg-green-500/10 border-green-500/30 my-0 rounded-lg mx-0 border-8 border-none shadow-xl py-[16px] px-[5px]">
                       <p className="text-sm text-green-400 font-medium">Strengths</p>
                       <p className="text-lg font-semibold">Communication, Resume</p>
                     </div>
@@ -119,13 +119,13 @@ const Predictions = () => {
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">7-Day Progress</p>
                     <div className="flex items-end gap-2 h-16">
-                      {predictionData.weeklyProgress.map((value, index) => (
-                        <div
-                          key={index}
-                          className="flex-1 bg-primary/40 rounded-t-sm transition-all hover:bg-primary"
-                          style={{ height: `${value}%` }}
-                        />
-                      ))}
+                      {predictionData.weeklyProgress.map((value, index) =>
+                      <div
+                        key={index}
+                        className="flex-1 bg-primary/40 rounded-t-sm transition-all hover:bg-primary"
+                        style={{ height: `${value}%` }} />
+
+                      )}
                     </div>
                     <div className="flex justify-between text-xs text-muted-foreground mt-1">
                       <span>7 days ago</span>
@@ -147,26 +147,26 @@ const Predictions = () => {
               <CardDescription>Actions to improve your score</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
-              {predictionData.recommendations.map((rec, index) => (
-                <div
-                  key={index}
-                  className={`p-3 rounded-lg border ${
-                    rec.priority === 'high' 
-                      ? 'bg-primary/10 border-primary/30' 
-                      : 'bg-secondary/30 border-border'
-                  }`}
-                >
+              {predictionData.recommendations.map((rec, index) =>
+              <div
+                key={index}
+                className={`p-3 rounded-lg border ${
+                rec.priority === 'high' ?
+                'bg-primary/10 border-primary/30' :
+                'bg-secondary/30 border-border'}`
+                }>
+
                   <div className="flex items-center justify-between mb-1">
                     <span className={`text-xs px-2 py-0.5 rounded-full ${
-                      rec.priority === 'high' ? 'bg-primary/20 text-primary' : 'bg-secondary text-muted-foreground'
-                    }`}>
+                  rec.priority === 'high' ? 'bg-primary/20 text-primary' : 'bg-secondary text-muted-foreground'}`
+                  }>
                       {rec.priority === 'high' ? 'High Priority' : 'Recommended'}
                     </span>
                     <span className="text-sm font-semibold text-green-400">{rec.impact}</span>
                   </div>
                   <p className="text-sm">{rec.action}</p>
                 </div>
-              ))}
+              )}
             </CardContent>
           </Card>
         </div>
@@ -183,8 +183,8 @@ const Predictions = () => {
               <CardDescription>How each factor impacts your prediction</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              {predictionData.factors.map((factor) => (
-                <div key={factor.name} className="space-y-2">
+              {predictionData.factors.map((factor) =>
+              <div key={factor.name} className="space-y-2">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="font-medium">{factor.name}</span>
@@ -194,16 +194,16 @@ const Predictions = () => {
                       {factor.impact === 'positive' && <ArrowUp className="w-4 h-4 text-green-500" />}
                       {factor.impact === 'negative' && <ArrowDown className="w-4 h-4 text-destructive" />}
                       <span className={`font-semibold ${
-                        factor.impact === 'positive' ? 'text-green-400' :
-                        factor.impact === 'negative' ? 'text-destructive' : 'text-muted-foreground'
-                      }`}>
+                    factor.impact === 'positive' ? 'text-green-400' :
+                    factor.impact === 'negative' ? 'text-destructive' : 'text-muted-foreground'}`
+                    }>
                         {factor.score}%
                       </span>
                     </div>
                   </div>
                   <Progress value={factor.score} className="h-2" />
                 </div>
-              ))}
+              )}
             </CardContent>
           </Card>
 
@@ -217,11 +217,11 @@ const Predictions = () => {
               <CardDescription>Your chances at target companies</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              {predictionData.companyPredictions.map((company) => (
-                <div
-                  key={company.name}
-                  className="flex items-center justify-between p-3 rounded-lg bg-secondary/30"
-                >
+              {predictionData.companyPredictions.map((company) =>
+              <div
+                key={company.name}
+                className="flex items-center justify-between p-3 rounded-lg bg-secondary/30">
+
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                       <Building2 className="w-5 h-5 text-accent" />
@@ -229,9 +229,9 @@ const Predictions = () => {
                     <div>
                       <p className="font-medium">{company.name}</p>
                       <p className={`text-xs ${
-                        company.probability >= 80 ? 'text-green-400' :
-                        company.probability >= 60 ? 'text-yellow-400' : 'text-muted-foreground'
-                      }`}>
+                    company.probability >= 80 ? 'text-green-400' :
+                    company.probability >= 60 ? 'text-yellow-400' : 'text-muted-foreground'}`
+                    }>
                         {company.status}
                       </p>
                     </div>
@@ -241,7 +241,7 @@ const Predictions = () => {
                     <span className="font-semibold w-12 text-right">{company.probability}%</span>
                   </div>
                 </div>
-              ))}
+              )}
             </CardContent>
           </Card>
         </div>
@@ -311,8 +311,8 @@ const Predictions = () => {
           </CardContent>
         </Card>
       </div>
-    </StudentLayout>
-  );
+    </StudentLayout>);
+
 };
 
 export default Predictions;
