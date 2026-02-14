@@ -20,7 +20,7 @@ import {
   Users,
   Search,
   Calendar,
-  Bell,
+
   Settings,
   LogOut,
   Building2,
@@ -147,7 +147,7 @@ const RecruiterLayout = ({ children }: RecruiterLayoutProps) => {
             <SidebarTrigger />
             <div className="flex-1" />
             <Button variant="ghost" size="icon" className="relative">
-              <Bell className="w-5 h-5" />
+              
               <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary" />
             </Button>
           </header>
