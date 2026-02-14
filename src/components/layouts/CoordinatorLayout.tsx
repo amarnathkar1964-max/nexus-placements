@@ -21,7 +21,7 @@ import {
   Building2,
   BarChart3,
   Calendar,
-  Bell,
+
   Settings,
   LogOut,
   Briefcase,
@@ -149,7 +149,7 @@ const CoordinatorLayout = ({ children }: CoordinatorLayoutProps) => {
             <SidebarTrigger />
             <div className="flex-1" />
             <Button variant="ghost" size="icon" className="relative">
-              <Bell className="w-5 h-5" />
+              
               <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-destructive" />
             </Button>
           </header>
