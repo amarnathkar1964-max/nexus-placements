@@ -41,7 +41,7 @@ const Footer = () => {
               </div>
               <span className="font-display font-bold text-lg">EvolveAI</span>
             </Link>
-            <p className="text-xs text-muted-foreground mb-4 max-w-xs">AI-powered placement platform transforming how students find careers.
+            <p className="text-xs text-muted-foreground mb-4 max-w-xs">AI-powered placement platform transforming how students find careers. 
 Contact me below on email for any queries or feedback :)
             </p>
             <div className="flex gap-2">
