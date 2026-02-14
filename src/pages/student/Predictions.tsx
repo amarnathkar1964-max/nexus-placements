@@ -117,7 +117,7 @@ const Predictions = () => {
 
                   {/* Weekly Trend */}
                   <div>
-                    <p className="text-sm text-muted-foreground mb-2">7-Day Progress</p>
+                    
                     <div className="flex items-end gap-2 h-16">
                       {predictionData.weeklyProgress.map((value, index) =>
                       <div
