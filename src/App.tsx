@@ -13,6 +13,7 @@ import ResumeAnalyzer from "./pages/student/ResumeAnalyzer";
 import MockInterview from "./pages/student/MockInterview";
 import Predictions from "./pages/student/Predictions";
 import Notifications from "./pages/student/Notifications";
+import Schedule from "./pages/student/Schedule";
 
 // Coordinator pages
 import CoordinatorDashboard from "./pages/coordinator/Dashboard";
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/student/interview" element={<MockInterview />} />
           <Route path="/student/predictions" element={<Predictions />} />
           <Route path="/student/notifications" element={<Notifications />} />
+          <Route path="/student/schedule" element={<Schedule />} />
           
           {/* Coordinator Routes */}
           <Route path="/coordinator/dashboard" element={<CoordinatorDashboard />} />

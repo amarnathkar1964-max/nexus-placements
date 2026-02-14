@@ -58,7 +58,7 @@ const StudentDashboard = () => {
           </div>
           <div className="flex gap-3">
             <Button variant="outline" asChild>
-              <Link to="/student/preparation">
+              <Link to="/student/schedule">
                 <Calendar className="w-4 h-4 mr-2" />
                 View Schedule
               </Link>
