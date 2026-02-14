@@ -118,15 +118,15 @@ const Predictions = () => {
                   {/* Weekly Trend */}
                   <div>
                     
-                    <div className="flex items-end gap-2 h-16">
-                      {predictionData.weeklyProgress.map((value, index) =>
-                      <div
-                        key={index}
-                        className="flex-1 bg-primary/40 rounded-t-sm transition-all hover:bg-primary"
-                        style={{ height: `${value}%` }} />
+                    
 
-                      )}
-                    </div>
+
+
+
+
+
+
+
                     <div className="flex justify-between text-xs text-muted-foreground mt-1">
                       
                       
