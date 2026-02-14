@@ -115,18 +115,20 @@ const Schedule = () => {
 
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Calendar */}
-          <Card variant="glass" className="lg:col-span-1">
-            <CardContent className="p-4">
-              <Calendar
-                mode="single"
-                selected={selectedDate}
-                onSelect={setSelectedDate}
-                modifiers={modifiers}
-                modifiersClassNames={modifiersClassNames}
-                className="p-3 pointer-events-auto w-full"
-              />
+          <Card variant="glass" className="lg:col-span-1 h-fit">
+            <CardContent className="p-0 overflow-hidden">
+              <div className="w-full overflow-x-auto">
+                <Calendar
+                  mode="single"
+                  selected={selectedDate}
+                  onSelect={setSelectedDate}
+                  modifiers={modifiers}
+                  modifiersClassNames={modifiersClassNames}
+                  className="p-3 pointer-events-auto"
+                />
+              </div>
               {/* Legend */}
-              <div className="mt-4 flex flex-wrap gap-3 px-2">
+              <div className="mt-4 flex flex-wrap gap-3 px-4 pb-4">
                 {Object.entries(eventTypeConfig).map(([key, config]) => (
                   <div key={key} className="flex items-center gap-1.5">
                     <div className={`w-2.5 h-2.5 rounded-full ${config.dotClass}`} />
