@@ -13,18 +13,18 @@ const Hero = () => {
       
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-primary/40 rounded-full animate-float"
-            style={{
-              left: `${15 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
-              animationDelay: `${i * 0.8}s`,
-              animationDuration: `${4 + i}s`
-            }}
-          />
-        ))}
+        {[...Array(6)].map((_, i) =>
+        <div
+          key={i}
+          className="absolute w-1 h-1 bg-primary/40 rounded-full animate-float"
+          style={{
+            left: `${15 + i * 15}%`,
+            top: `${20 + i % 3 * 25}%`,
+            animationDelay: `${i * 0.8}s`,
+            animationDuration: `${4 + i}s`
+          }} />
+
+        )}
       </div>
 
       {/* Grid pattern */}
@@ -40,39 +40,39 @@ const Hero = () => {
           </div>
 
           {/* Main headline */}
-          <h1 
+          <h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-4 leading-[1.1] tracking-tight animate-fade-in-up"
-            style={{ animationDelay: '0.1s' }}
-          >
+            style={{ animationDelay: '0.1s' }}>
+
             An End-to-End AI Suite for{' '}
             <span className="gradient-text relative">
               Smarter Placements
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                <path d="M2 10C50 2 150 2 298 10" stroke="url(#underline-gradient)" strokeWidth="3" strokeLinecap="round"/>
-                <defs>
-                  <linearGradient id="underline-gradient" x1="0" y1="0" x2="300" y2="0">
-                    <stop stopColor="hsl(173 80% 50%)" />
-                    <stop offset="1" stopColor="hsl(260 80% 65%)" />
-                  </linearGradient>
-                </defs>
-              </svg>
+              
+
+
+
+
+
+
+
+
             </span>
           </h1>
 
           {/* Subheadline */}
-          <p 
+          <p
             className="text-base sm:text-lg md:text-xl text-muted-foreground mb-5 max-w-2xl mx-auto leading-relaxed animate-fade-in-up"
-            style={{ animationDelay: '0.2s' }}
-          >
+            style={{ animationDelay: '0.2s' }}>
+
             Prepare better, predict outcomes, and place students efficiently using AI.
             One unified platform for students, coordinators, and recruiters.
           </p>
 
           {/* CTA Buttons */}
-          <div 
+          <div
             className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-4 animate-fade-in-up"
-            style={{ animationDelay: '0.3s' }}
-          >
+            style={{ animationDelay: '0.3s' }}>
+
             <Button variant="hero" size="lg" asChild className="group">
               <Link to="/student/dashboard">
                 Get Started
@@ -82,10 +82,10 @@ const Hero = () => {
           </div>
 
           {/* Login Options */}
-          <div 
+          <div
             className="flex flex-wrap gap-2 justify-center items-center animate-fade-in-up"
-            style={{ animationDelay: '0.4s' }}
-          >
+            style={{ animationDelay: '0.4s' }}>
+
             <Button variant="ghost" size="sm" asChild className="text-xs hover:bg-primary/10 hover:text-primary transition-all">
               <Link to="/student/dashboard" className="flex items-center gap-1.5">
                 <GraduationCap className="w-3.5 h-3.5" />
@@ -109,10 +109,10 @@ const Hero = () => {
           </div>
 
           {/* Dashboard Preview */}
-          <div 
+          <div
             className="mt-8 animate-fade-in-up"
-            style={{ animationDelay: '0.5s' }}
-          >
+            style={{ animationDelay: '0.5s' }}>
+
             <div className="relative mx-auto max-w-3xl group">
               {/* Glow effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
@@ -134,9 +134,9 @@ const Hero = () => {
                 <div className="p-4 grid grid-cols-12 gap-3">
                   {/* Sidebar */}
                   <div className="col-span-2 space-y-2">
-                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className={`h-6 rounded ${i === 0 ? 'bg-primary/30' : 'bg-secondary/50'}`} />
-                    ))}
+                    {[...Array(5)].map((_, i) =>
+                    <div key={i} className={`h-6 rounded ${i === 0 ? 'bg-primary/30' : 'bg-secondary/50'}`} />
+                    )}
                   </div>
                   
                   {/* Main content */}
@@ -145,14 +145,14 @@ const Hero = () => {
                       <span className="text-sm font-display font-medium text-primary">AI Analytics Dashboard</span>
                     </div>
                     <div className="grid grid-cols-3 gap-3">
-                      {['85%', '12', '94'].map((value, i) => (
-                        <div key={i} className="h-16 rounded-lg bg-secondary/50 flex flex-col items-center justify-center border border-border/30 hover:border-primary/30 transition-colors">
+                      {['85%', '12', '94'].map((value, i) =>
+                      <div key={i} className="h-16 rounded-lg bg-secondary/50 flex flex-col items-center justify-center border border-border/30 hover:border-primary/30 transition-colors">
                           <span className="text-lg font-bold text-foreground">{value}</span>
                           <span className="text-[10px] text-muted-foreground">
                             {['Readiness', 'Interviews', 'Score'][i]}
                           </span>
                         </div>
-                      ))}
+                      )}
                     </div>
                   </div>
                 </div>
@@ -164,8 +164,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
