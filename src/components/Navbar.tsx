@@ -11,7 +11,8 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform">
-              <span className="text-primary-foreground font-bold text-xs">P</span>
+              <span className="text-primary-foreground font-bold text-xs">E
+            </span>
             </div>
             <span className="font-display font-bold text-lg">EvolveAI</span>
           </Link>
@@ -85,6 +86,5 @@ const Navbar = () => {
             </div>
           </div>}
       </div>
-    </nav>;
-};
+    </nav>;};
 export default Navbar;
