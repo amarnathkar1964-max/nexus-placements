@@ -17,7 +17,7 @@ const cards = [{
 }];
 const ProblemSolution = () => {
   return (
-    <section className="py-8 relative">
+    <section className="py-4 relative">
       <div className="container mx-auto px-4">
         
 

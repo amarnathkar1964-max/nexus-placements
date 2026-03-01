@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden pt-14">
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-14">
       {/* Animated background */}
       <div className="absolute inset-0 bg-hero-glow" />
       <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse-slow" />
@@ -33,7 +33,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs mb-6 animate-fade-in hover:scale-105 transition-transform cursor-default">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs mb-4 animate-fade-in hover:scale-105 transition-transform cursor-default">
             <Sparkles className="w-3 h-3 text-primary" />
             <span className="text-muted-foreground">AI-Powered Placement Platform</span>
             <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
@@ -41,7 +41,7 @@ const Hero = () => {
 
           {/* Main headline */}
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-4 leading-[1.1] tracking-tight animate-fade-in-up"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-3 leading-[1.1] tracking-tight animate-fade-in-up"
             style={{ animationDelay: '0.1s' }}>
 
             An End-to-End AI Suite for{' '}
@@ -61,7 +61,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p
-            className="text-base sm:text-lg md:text-xl text-muted-foreground mb-5 max-w-2xl mx-auto leading-relaxed animate-fade-in-up"
+            className="text-sm sm:text-base md:text-lg text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed animate-fade-in-up"
             style={{ animationDelay: '0.2s' }}>
 
             Prepare better, predict outcomes, and place students efficiently using AI.
@@ -70,7 +70,7 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div
-            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-4 animate-fade-in-up"
+            className="flex flex-col sm:flex-row gap-2 justify-center items-center mb-3 animate-fade-in-up"
             style={{ animationDelay: '0.3s' }}>
 
             <Button variant="hero" size="lg" asChild className="group">
@@ -110,7 +110,7 @@ const Hero = () => {
 
           {/* Dashboard Preview */}
           <div
-            className="mt-8 animate-fade-in-up"
+            className="mt-5 animate-fade-in-up"
             style={{ animationDelay: '0.5s' }}>
 
             <div className="relative mx-auto max-w-3xl group">

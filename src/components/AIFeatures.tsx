@@ -37,7 +37,7 @@ const features = [
 
 const AIFeatures = () => {
   return (
-    <section id="ai-features" className="py-8 relative overflow-hidden">
+    <section id="ai-features" className="py-4 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
