@@ -51,7 +51,7 @@ const SidebarContents = () => {
       <div className="p-4 border-b border-sidebar-border">
         <Link to="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0">
-            <span className="text-primary-foreground font-bold text-sm">P</span>
+            <span className="text-primary-foreground font-bold text-sm">E</span>
           </div>
           {!collapsed && <span className="font-display font-bold text-lg">EvolveAI</span>}
         </Link>
