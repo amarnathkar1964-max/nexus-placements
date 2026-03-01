@@ -35,14 +35,14 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs mb-4 animate-fade-in hover:scale-105 transition-transform cursor-default">
             <Sparkles className="w-3 h-3 text-primary" />
-            <span className="text-muted-foreground">AI-Powered Placement Platform</span>
+            <span className="text-muted-foreground">
+            </span>
             <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           </div>
 
           {/* Main headline */}
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-3 leading-[1.1] tracking-tight animate-fade-in-up"
-            style={{ animationDelay: '0.1s' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-3 leading-[1.1] tracking-tight animate-fade-in-up"
+          style={{ animationDelay: '0.1s' }}>
 
             An End-to-End AI Suite for{' '}
             <span className="gradient-text relative">
