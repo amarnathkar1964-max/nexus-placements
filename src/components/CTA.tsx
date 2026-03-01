@@ -9,10 +9,10 @@ const CTA = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs mb-4">
-            <Sparkles className="w-3 h-3 text-primary" />
-            <span className="text-muted-foreground">Join 50K+ successful placements</span>
-          </div>
+          
+
+
+
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-4 leading-tight">
             Ready to Transform Your{' '}
