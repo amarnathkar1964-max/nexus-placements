@@ -30,9 +30,9 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="py-8 border-t border-border bg-card/30">
+    <footer className="py-5 border-t border-border bg-card/30">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-3">
@@ -76,7 +76,7 @@ Contact me below on email for any queries or feedback :)
           )}
         </div>
 
-        <div className="pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-3">
+        <div className="pt-4 border-t border-border flex flex-col md:flex-row justify-between items-center gap-2">
           <p className="text-xs text-muted-foreground">© 2026 EvolveAI. All rights reserved.</p>
           <p className="text-xs text-muted-foreground">Made with ❤️ for the next generation</p>
         </div>
