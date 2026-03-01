@@ -1,39 +1,39 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  FileText, 
-  MessageSquare, 
-  TrendingUp, 
-  BookOpen, 
-  Brain, 
-  BarChart3 
-} from "lucide-react";
+import {
+  FileText,
+  MessageSquare,
+  TrendingUp,
+  BookOpen,
+  Brain,
+  BarChart3 } from
+"lucide-react";
 
 const features = [
-  {
-    icon: FileText,
-    title: "Resume Analyzer",
-    description: "AI feedback on quality, ATS compatibility, and skill gaps.",
-    tag: "Profile",
-  },
-  {
-    icon: TrendingUp,
-    title: "Predictions",
-    description: "AI predicts placement probability and highlights weak areas.",
-    tag: "Analytics",
-  },
-  {
-    icon: BookOpen,
-    title: "Smart Prep",
-    description: "AI-generated questions with company-specific practice modules.",
-    tag: "Practice",
-  },
-  {
-    icon: BarChart3,
-    title: "Batch Insights",
-    description: "For coordinators: batch performance and forecasting.",
-    tag: "Admin",
-  },
-];
+{
+  icon: FileText,
+  title: "Resume Analyzer",
+  description: "AI feedback on quality, ATS compatibility, and skill gaps.",
+  tag: "Profile"
+},
+{
+  icon: TrendingUp,
+  title: "Predictions",
+  description: "AI predicts placement probability and highlights weak areas.",
+  tag: "Analytics"
+},
+{
+  icon: BookOpen,
+  title: "Smart Prep",
+  description: "AI-generated questions with company-specific practice modules.",
+  tag: "Practice"
+},
+{
+  icon: BarChart3,
+  title: "Batch Insights",
+  description: "For coordinators: batch performance and forecasting.",
+  tag: "Admin"
+}];
+
 
 const AIFeatures = () => {
   return (
@@ -58,18 +58,18 @@ const AIFeatures = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-          {features.map((feature, index) => (
-            <Card 
-              key={feature.title} 
-              variant="feature"
-              className="p-4 animate-fade-in-up hover:translate-y-[-4px] transition-all duration-300"
-              style={{ animationDelay: `${index * 0.05}s` }}
-            >
+          {features.map((feature, index) =>
+          <Card
+            key={feature.title}
+            variant="feature"
+            className="p-4 animate-fade-in-up hover:translate-y-[-4px] transition-all duration-300"
+            style={{ animationDelay: `${index * 0.05}s` }}>
+
               <CardContent className="p-0">
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-5 h-5 text-primary-foreground" />
-                  </div>
+                  
+
+
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="font-display font-semibold text-sm">{feature.title}</h3>
@@ -84,11 +84,11 @@ const AIFeatures = () => {
                 </div>
               </CardContent>
             </Card>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default AIFeatures;
