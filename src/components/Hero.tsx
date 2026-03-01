@@ -35,8 +35,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs mb-4 animate-fade-in hover:scale-105 transition-transform cursor-default">
             <Sparkles className="w-3 h-3 text-primary" />
-            <span className="text-muted-foreground">
-            </span>
+            <span className="text-muted-foreground">Digitalizing Placement Ecosystem </span>
             <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           </div>
 
