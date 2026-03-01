@@ -66,10 +66,10 @@ const SidebarContents = () => {
             </div>
             {!collapsed &&
             <div>
-                <p className="font-medium text-sm">Dr. Sarah Chen</p>
+                <p className="font-medium text-sm">
+              </p>
                 <p className="text-xs text-sidebar-foreground/60">Placement Coordinator</p>
-              </div>
-            }
+              </div>}
           </div>
         </div>
 
